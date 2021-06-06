@@ -1,0 +1,13 @@
+list is mutable, non homogenous, 
+list functions -: append,insert,extend,pop,remove,clear,sort,count, index.  Append will insert in last, insert will insert in giving index, extend will insert 
+according to pass ,pop will remove first element, remove will remove passed element , clear will make the list empty it will return empty list, sort will 
+sort the list in assending order,count will count the occurence of passed element, index weill return the index of passed element.
+
+TUPLE: tuples are immutable.
+tuple functions:- del,len,count . len & count are same as in list del function is used to delete the whole tuple
+
+SET: No duplicates, No indexing, whole set is mutable
+sets functions :- add, discard . add will ada a passed element, discard will ignore the passed element and return all other.
+
+DICTIONARY: mutable, key& value pair
+dictionary functions :- we can change the value of any pair,
