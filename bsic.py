@@ -62,10 +62,9 @@ class Queue:
 # linked list
 
 class Node:
-    def __init__(self,data = None, next = None):
+    def __init__(self,data, next):
         self.data = data
         self.next = next
-
 
 class LL:
     def __init__(self):
@@ -73,10 +72,10 @@ class LL:
 
 # printing a data
     def printList(self):
-        temp = self.head
-        while(temp):
-            print(temp.data)
-            temp = temp.next
+        cur = self.head
+        while(cur):
+            print(cur.data)
+            cur = cur.next
 
 # push a element in front
     def pushBeg(self,newData):
@@ -276,20 +275,14 @@ class CircularLL:
         temp = head
         previous = None
 
-        # check if list doesn't have any node
-        # if not then return
         if (head == None):
             print("\nList is empty")
             return None
 
-        # check if list have single node
-        # if yes then delete it and return
         if (current.next == current):
             head = None
             return None
 
-        # move first node to last
-        # previous
         while (current.next != head):
             previous = current
             current = current.next
@@ -299,7 +292,37 @@ class CircularLL:
 
         return head
 
+#-------------------------------------------------------------------------------------------------------------------------------
 
+# Double Ended Queue
+
+class deque:
+    def __init__(self):
+        self.items = []
+        
+    def isEmpty(self):
+        return self.items == []
+    
+    def addRear(self,item):
+        self.items.append(item)
+        
+    def addFront(self, item):
+        self.items.insert(0, item)
+        
+    def removefront(self):
+        return self.items.pop()
+    
+    def removeRear(self):
+        return self.items.pop(0)
+    
+    def size(self):
+        return len(self.items)
+    
+# d= deque()
+# d.addFront(5)
+# d.addRear(10)
+# d.addRear(15)
+# print(d.size())
 
 
 
