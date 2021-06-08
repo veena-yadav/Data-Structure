@@ -1,22 +1,22 @@
 # stack
 
-# def create_stack():
-#     stack = []
-#     return stack
+def create_stack():
+    stack = []
+    return stack
 
-# def check_empty(stack):
-#     return len(stack)==0
+def check_empty(stack):
+    return len(stack)==0
 
-# def push(stack, item):
-#     stack.append(item)
-#     print('pushed item '+ item)
+def push(stack, item):
+    stack.append(item)
+    print('pushed item '+ item)
 
-# def pop(stack):
-#     if(check_empty(stack)):
-#         return "stack is empty"
-#     else:
-#         item = stack.pop()
-#         print('poped element: ', item)
+def pop(stack):
+    if(check_empty(stack)):
+        return "stack is empty"
+    else:
+        item = stack.pop()
+        print('poped element: ', item)
 
 
 # newstack = create_stack()
@@ -28,23 +28,23 @@
 # print(newstack)
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------
-#Queue
+# --------------------------------------------------------------------------------------------------------------------------------------
+# Queue
 
-# class Queue:
-#     def __init__(self):
-#         self.queue = []
+class Queue:
+    def __init__(self):
+        self.queue = []
          
-#     def enqueue(self, item):
-#         self.queue.append(item)
+    def enqueue(self, item):
+        self.queue.append(item)
 
-#     def dequeue(self):
-#         if(len(self.queue)<1):
-#             return None
-#         return self.queue.pop(0)
+    def dequeue(self):
+        if(len(self.queue)<1):
+            return None
+        return self.queue.pop(0)
 
-#     def display(self):
-#         print(self.queue)
+    def display(self):
+        print(self.queue)
 
 # Q = Queue()
 # Q.enqueue(5)
@@ -57,72 +57,72 @@
 # output
 # [5, 10, 15]
 # [10, 15]
-#---------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 # linked list
 
-# class Node:
-#     def __init__(self,data = None, next = None):
-#         self.data = data
-#         self.next = next
+class Node:
+    def __init__(self,data = None, next = None):
+        self.data = data
+        self.next = next
 
 
-# class LL:
-#     def __init__(self):
-#         self.head = None
+class LL:
+    def __init__(self):
+        self.head = None
 
-# # printing a data
-#     def printList(self):
-#         temp = self.head
-#         while(temp):
-#             print(temp.data)
-#             temp = temp.next
+# printing a data
+    def printList(self):
+        temp = self.head
+        while(temp):
+            print(temp.data)
+            temp = temp.next
 
-# # push a element in front
-#     def pushBeg(self,newData):
-#         newNode = Node(newData)
-#         newNode.next = self.head
-#         self.head = newNode
+# push a element in front
+    def pushBeg(self,newData):
+        newNode = Node(newData)
+        newNode.next = self.head
+        self.head = newNode
 
-# # push a element at given point
-#     def pushAfter(self, prevNode ,newData):
+# push a element at given point
+    def pushAfter(self, prevNode ,newData):
     
-#         if prevNode is None:
-#             print('list is empty')
+        if prevNode is None:
+            print('list is empty')
         
-#         newNode = Node(newData)
-#         newNode.next = prevNode.next
-#         prevNode.next = newNode
+        newNode = Node(newData)
+        newNode.next = prevNode.next
+        prevNode.next = newNode
 
-# # push a element at end point
-#     def pushLast(self, newData):
-#         newNode = Node(newData)
-#         if self.head is None:
-#             self.head = newNode
-#             return
+# push a element at end point
+    def pushLast(self, newData):
+        newNode = Node(newData)
+        if self.head is None:
+            self.head = newNode
+            return
         
-#         last = self.head
-#         while (last.next):
-#             last = last.next
-#             last.next = newNode
+        last = self.head
+        while (last.next):
+            last = last.next
+            last.next = newNode
 
-# # Deleting a node
+# Deleting a node
 
-#     def DeleteAfter(self, pos):
-#         curNode = self.head
-#         prev = None
-#         count = 0
+    def DeleteAfter(self, pos):
+        curNode = self.head
+        prev = None
+        count = 0
 
-#         while curNode and count != pos:
-#             prev = curNode
-#             curNode = curNode.next
-#             count += 1
+        while curNode and count != pos:
+            prev = curNode
+            curNode = curNode.next
+            count += 1
 
-#         if curNode is None:
-#             return
+        if curNode is None:
+            return
 
-#         prev.next = curNode.next
-#         curNode = None
+        prev.next = curNode.next
+        curNode = None
         
 
 # linkedlist = LL()
@@ -133,7 +133,8 @@
 # linkedlist.printList()
 # linkedlist.DeleteAfter(1)
 
-#------------------------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------
+# doubly linked list
 
 class Node:
     def __init__(self,data):
@@ -220,8 +221,83 @@ class DoubltLinkedlist:
                     return
             cur = cur.next
 
+#------------------------------------------------------------------------------------------------------------------------------------------------
+
+#circular linked list
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = next
 
 
+class CircularLL:
+    def __init__(self):
+        self.head = None
+
+    def printList(self):
+        cur = self.head
+        while cur:
+            print(cur.data)
+            cur = cur.next
+            if cur == self.head:
+                break
+
+    def append(self,data):
+        if not self.head:
+            self.head = Node(data)
+            self.head.next = self.head
+
+        else:
+            newNode = Node(data)
+            cur = self.head
+            while cur.next != self.head:
+                cur = cur.next
+            cur.next = newNode
+            newNode.next = self.head
+
+    def prepond(self,data):
+        newNode = Node(data)
+        cur = self.head
+        newNode.next = self.head
+
+        if not self.head:
+            newNode.next = newNode 
+
+        else:
+            while cur.next != self.head:
+                cur = cur.next
+            cur.next = newNode
+        
+        self.head = newNode
+    
+    def DeleteLast( self, head):
+        current = head
+        temp = head
+        previous = None
+
+        # check if list doesn't have any node
+        # if not then return
+        if (head == None):
+            print("\nList is empty")
+            return None
+
+        # check if list have single node
+        # if yes then delete it and return
+        if (current.next == current):
+            head = None
+            return None
+
+        # move first node to last
+        # previous
+        while (current.next != head):
+            previous = current
+            current = current.next
+
+        previous.next = current.next
+        head = previous.next
+
+        return head
 
 
 
