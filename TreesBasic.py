@@ -192,10 +192,71 @@ def deleteNode(root, key):
 # root = deleteNode(root,50)
 # find1 = search(root, 51)
 # print(find1)    
+
+#----------------------------------------------------------------------------------------------------------------------------------------
+#AVL TREES
+      
+class TreeNode(object):
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+        self.height = 1
         
+class AvlTree(object):
+    # get height of the tree
+    def getHeight(self,root):
+        if not root:
+            return 0
+        return root.height
+    
+    # get balance factor
+    def getBalance(self,root):
+        if not root:
+            return 0
+        return self.getHeight(root.left) - self.getHeight(root.right)
         
+    def insert(self, root, key):
+        if not root:
+            return TreeNode
+        elif key <  root.value:
+            root.left = self.insert(root.left, key)
+        else:
+            root.right = self.insert(root.right, key)
+            
+        root.height = 1+ max(self.getHeight(root.left), self.getHeight(root.right))     
         
+        balance = self.getBalance(root)
         
+        # ll rotation
+        if balance > 1 and key < root.left.value:
+            return self.rightRotate(root)
+        
+        # RR rotation
+        if balance < -1 and key > root.left.value:
+            return self.leftRotate(root)
+        
+        # LR rotation
+        if balance > 1 and key > root.right.val:
+            root.left = self.leftRotate(root.left)
+            return self.rightRotate(root)
+        
+        # RL rotation
+        if balance < -1 and key < root.right.val:
+            root.right = self.rightRotate(root.right)
+            return self.leftRotate(root)
+        return root
+    
+    def leftRotate(self, z):
+        y = z.right
+        t2 = y.left
+        
+        y.left = z
+        z.right = t2
+        
+        z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
+        y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
+        return y
         
         
         
