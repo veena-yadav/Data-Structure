@@ -40,13 +40,7 @@ def printGivenLevel(root , level):
 		print(root.value,end=" ")
 	elif level > 1 :
 		printGivenLevel(root.left , level-1)
-		printGivenLevel(root.right , level-1)
-
-# Counting no. of nodes in given tree
-def countNode(root):
-    if root is None:
-        return 0
-    return (1 + countNode(root.left) + countNode(root.right))      
+		printGivenLevel(root.right , level-1)     
 
 # Hieght 0f tree
 def height(node):
@@ -72,14 +66,20 @@ def height(node):
     
 #     return (1 + max(leftHeight, rightHeight))
 
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
+# Counting no. of nodes in given tree
+def countNode(root):
+    if root is None:
+        return 0
+    return (1 + countNode(root.left) + countNode(root.right)) 
 
-print("Level order traversal of binary tree is -")
-printLevelOrder(root)
+# root = Node(1)
+# root.left = Node(2)
+# root.right = Node(3)
+# root.left.left = Node(4)
+# root.left.right = Node(5)
+
+# print("Level order traversal of binary tree is -")
+# printLevelOrder(root)
 
 # creating a tree    
     
@@ -139,12 +139,12 @@ def search(node, key):
     if key < node.key:
         return search(node.left, key)      
         
-root = None
-root =  insert(root, 10)   
-root =  insert(root, 20)
-root =  insert(root, 30)
-root =  insert(root, 40)
-root =  insert(root, 50)
+# root = None
+# root =  insert(root, 10)   
+# root =  insert(root, 20)
+# root =  insert(root, 30)
+# root =  insert(root, 40)
+# root =  insert(root, 50)
         
 # find1 = search(root, 51)
 # print(find1)
@@ -258,17 +258,129 @@ class AvlTree(object):
         y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
         return y
         
+    def rightRotation(self,z):
+        y = z.left
+        t3 = y.right
         
+        y.right = z
+        z.left = t3
         
+        z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
+        y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
         
+        return y
         
+    def getMinValueNode(self, root):
+        if root is None or root.left is None:
+            return root
+        return self.getMinValueNode(root.left)
+    
+    def deleteNode(self, root, key):
+        if not root:
+            return root
         
+        elif key < root.val:
+            root.left = self.deleteNode(root.left, key)
+            
+        elif key > root.val:
+            root.right = self.deleteNode(root.right, key)
+            
+        else:
+            if root.left is None:
+                temp = root.right
+                root = None
+                return temp
+            elif root.right is None:
+                temp = root.left
+                root = None
+                return temp
+
+            temp = self.getMinValueNode(root.right)
+            root.val = temp.val
+            root.right = self.deleteNode(root.right, temp.val)
         
+        if root is None:
+            return root
         
+        root.height = 1 + max(self.getHeight(root.left),self.getHeight(root.right))
+        balance = self.getBalance(root)
         
+        # case 1 LL
+        if balance >1 and self.getBalance(root.left) >= 0:
+            return self.rightRotation(root)
+        # case 2 RR
+        if balance <-1 and self.getBalance(root.right) <= 0:
+            return self.leftRotate(root)
+        # case 3 LR
+        if balance > 1 and self.getBalance(root.left) < 0:
+            root.left = self.leftRotate(root.left)
+            return self.rightRotation(root)
+        # case RL
+        if balance < -1 and self.getBalance(root.right) > 0:
+            root.right = self.rightRotation(root)
+            return self.leftRotate(root)
         
+        return root
         
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HEAP 
+# every heap should be compelete binary tree and nodes are left as far as possible
+
+def heapify(arr, n, i):
+    large = i
+    l = 2*i +1
+    r = 2*i + 2
+    if l<n and arr[i] < arr[l]:
+        large = l
+    if r < n and arr[large] < arr[r]:
+        large = r
+    if large != i:
+        arr[i],arr[large] = arr[large], arr[i]
+        heapify(arr, n, large)
         
-        
-        
-        
+def insert(arr, newNum):
+    Size = len(arr)
+    if Size == 0:
+        arr.append(newNum)
+    else:
+        arr.append(newNum)
+        for i in range((Size//2) -1, -1, -1):
+            heapify(arr, Size, i)
+            
+def deleteNodefromHeap(arr, num):
+    Size = len(arr)
+    i = 0
+    for i in range(0, Size):
+        if num == arr[i]:
+            break
+    arr[i], arr[Size -1] = arr[Size-1],arr[i]
+    arr.remove(Size-1)
+    for i in range((Size//2) -1, -1, -1):
+        heapify(arr, Size, i)         
+# create max heap-> find largest element -> swap with last -> remove that item -> place it in sorted array
+# time complexity o(nlogn)
+def Heapsort(arr):
+    n = len(arr)
+    
+    for i in range(n//2 -1,-1,-1):
+        heapify(arr, n,i)
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0],arr[i]
+        heapify(arr, i, 0)
+arr = []
+insert(arr, 5)
+insert(arr, 10)
+insert(arr, 15)
+insert(arr, 20)
+insert(arr, 25)
+insert(arr, 30)
+
+print("Max heap: " + str(arr))
+# deleteNodefromHeap(arr,5)
+# print("After dleteing a element:" + str(arr))
+arr1 = [5,50,20,10,7,15]
+Heapsort(arr1)
+n= len(arr1)
+for i in range(n):
+    print("%d " %arr1[i], end=' ')
