@@ -379,8 +379,24 @@ insert(arr, 30)
 print("Max heap: " + str(arr))
 # deleteNodefromHeap(arr,5)
 # print("After dleteing a element:" + str(arr))
-arr1 = [5,50,20,10,7,15]
-Heapsort(arr1)
-n= len(arr1)
-for i in range(n):
-    print("%d " %arr1[i], end=' ')
+# arr1 = [5,50,20,10,7,15]
+# Heapsort(arr1)
+# n= len(arr1)
+# for i in range(n):
+#     print("%d " %arr1[i], end=' ')
+    
+#--------------------------------------------------------------------------------------------------------------------------
+# priority Queue
+
+import heapq
+
+q= []
+heapq.heappush(q,(2, 'chinky'))
+heapq.heappush(q,(0, 'pinky'))
+heapq.heappush(q,(1, 'tinky'))
+heapq.heappush(q,(4, 'linky'))
+heapq.heappush(q,(3, 'minky'))
+
+while q:
+    next = heapq.heappop(q)
+    print(next)
