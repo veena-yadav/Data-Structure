@@ -1,11 +1,9 @@
 # Sort an array of 0s, 1s and 2s
 
-arr = [0,1,0,2,0,1,2]
 
 
-def sortarr(arr):
-    n = len(arr)
-    l = []
+def sortarr(arr,n):
+    
     cnt = 0 
     cnt1 =0
     cnt2 = 0
@@ -17,19 +15,25 @@ def sortarr(arr):
         elif arr[i] ==2:
             cnt2 += 1
             
-        while cnt > 0:
-            l.append(0)
-            cnt -= 1
-        
-        while cnt > 0:
-            l.append(1)
-            cnt -= 1
-        
-        while cnt2 > 0:
-            l.append(2)
-            cnt -= 1
-    
-    return l
+    for i in range(0,cnt):
+        arr[i]=0
+            
+    for i in range(cnt, (cnt + cnt1)):
+        arr[i] = 1
 
-ls = sortarr(arr)
-print(ls)
+    for i in range((cnt + cnt1), n):
+        arr[i] = 2
+    
+    return 
+
+def printArray( arr,  n):
+ 
+    for i in range(0,n):
+        print( arr[i] , end=" ")
+    print()
+
+
+arr = [ 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 ]
+n = len(arr)
+sortarr(arr, n)
+printArray(arr, n)
