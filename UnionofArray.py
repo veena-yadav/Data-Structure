@@ -18,7 +18,7 @@ n = len(a2)
         
 # print(a1)
 
-def arr(a1,a2, m,n):
+def unionarr(a1,a2, m,n):
     i=0
     j=0
     while i<m and j<n:
@@ -43,4 +43,13 @@ def arr(a1,a2, m,n):
         print(a2[i])
         j += 1
         
-arr(a1, a2, m, n)
+# unionarr(a1, a2, m, n)
+
+def intersectioarr(a1,a2,m,n):
+    for i in a2:
+        if x in a1:
+            pass
+        else:
+            print(a2[i])
+            
+intersectioarr(a1, a2, m, n)
