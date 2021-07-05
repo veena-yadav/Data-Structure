@@ -6,7 +6,7 @@ def Duplicates(arr):
         
         
 arr = [1,2,3,4,5,5]
-print(Duplicates(arr))
+# print(Duplicates(arr))
 
 # n = 4, m = 5
 # arr1[] = {1, 3, 5, 7}
@@ -14,3 +14,15 @@ print(Duplicates(arr))
 
 # def mergeSortedArr(arr1,arr2,n,m):
 #     for i in 
+
+
+# Search a elment in arrary
+arr1 = [12, 34, 10, 6, 40]
+n = len(arr)
+def SearchArr(arr,n,x):
+    for i in range(n):
+        if arr[i]==x:
+            return i
+    return("element does not exit")
+    
+print(SearchArr(arr1,n,34))
