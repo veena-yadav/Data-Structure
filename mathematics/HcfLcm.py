@@ -11,6 +11,18 @@ a = 10
 b = 15
 print("gcd(", a , "," , b, ") = ", gcd(a, b))
 
+import math
+# Returns the lcm of first n numbers
+def lcm(n):
+    ans = 1
+    for i in range(1, n + 1):
+        ans = int((ans * i)/math.gcd(ans, i))        
+    return ans
+   
+# main
+n = 20
+print (lcm(n))
+
 # Python3 program to find LCM of array
 
 def LCM(arr, n):
