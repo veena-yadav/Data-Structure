@@ -111,11 +111,33 @@ def RangeCoff(arr):
     return (range,cofficient)
 
 arr = [15, 16, 10, 9, 6, 7, 17]
-print(RangeCoff(arr))
+# print(RangeCoff(arr))
         
 
+##########################################################################
+# You are given a list of n-1 integers and these integers are in the range of 1 to n. There are no duplicates 
+# in the list. One of the integers is missing in the list.
 
-
+def MissingNum(A):
+    n = len(A)
+    total = (n + 1)*(n + 2)/2
+    sum_of_A = sum(A)
+    return int(total - sum_of_A)
+    # arr.sort()
+    # flag =0
+    # for i in range(1,n):
+    #     if arr[i] - arr[i-1] != 1:
+    #         x = arr[i] + 1
+    #         flag =0
+    #     else:
+    #         flag = 1
+            
+    # if flag == 1:
+    #     return("no elment is missing")
+    # return x
+        
+arr = [1, 2, 4, 6, 3, 7, 8]
+print(MissingNum(arr))
 
 
 
