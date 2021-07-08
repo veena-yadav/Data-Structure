@@ -152,8 +152,8 @@ def Countpairs(arr,Sum_given):
                 
     return cnt
 
-arr = [1, 5, 7, -1, 5]
-print(Countpairs(arr,6))
+# arr = [1, 5, 7, -1, 5]
+# print(Countpairs(arr,6))
 
 ##############################################################33
 
@@ -164,13 +164,25 @@ for i in range(n):
 	x = numRay[i] % n
 	numRay[x] = numRay[x] + n
 
-print("The repeating elements are : ")
-for i in range(n):
-	if (numRay[i] >= n*2):
-		print(i, " ")
+# print("The repeating elements are : ")
+# for i in range(n):
+# 	if (numRay[i] >= n*2):
+# 		print(i, " ")
 
 ####################################################################
+"""
+Find common elements in three sorted arrays
+Input: 
+ar1[] = {1, 5, 10, 20, 40, 80} 
+ar2[] = {6, 7, 20, 80, 100} 
+ar3[] = {3, 4, 15, 20, 30, 70, 80, 120} 
+Output: 20, 80
 
+Input: 
+ar1[] = {1, 5, 5} 
+ar2[] = {3, 4, 5, 5, 10} 
+ar3[] = {5, 5, 10, 20} 
+Output: 5, 5"""
 def findCommon(ar1,ar2,ar3,n1,n2,n3):
     i, j, k = 0, 0, 0
     while(i<n1 and j<n2 and k<n3):
@@ -188,16 +200,37 @@ def findCommon(ar1,ar2,ar3,n1,n2,n3):
             k += 1
         
     
-ar1 = [1, 5, 10, 20, 40, 80]
-ar2 = [6, 7, 20, 80, 100]
-ar3 = [3, 4, 15, 20, 30, 70, 80, 120]
-n1 = len(ar1)
-n2 = len(ar2)
-n3 = len(ar3)
-print("Common elements are")
-findCommon(ar1, ar2, ar3, n1, n2, n3)
+# ar1 = [1, 5, 10, 20, 40, 80]
+# ar2 = [6, 7, 20, 80, 100]
+# ar3 = [3, 4, 15, 20, 30, 70, 80, 120]
+# n1 = len(ar1)
+# n2 = len(ar2)
+# n3 = len(ar3)
+# print("Common elements are")
+# findCommon(ar1, ar2, ar3, n1, n2, n3)
 
 
+####################################################################
+"""Given an array of integers, find the first repeating element in it. We need to find the element that occurs more than once and whose index of first occurrence is smallest. """
+
+def printFirstRepeating(arr,n):
+    # for i in range(n):
+    #     if arr.count(arr[i])>1:
+    #         return arr[i]
+    # return "not exist"
+    
+    # Method 2
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i] == arr[j]:
+                return(arr[i])
+              
+          
+    
+
+arr = [6, 10, 5, 4, 9, 120, 4, 6, 10]
+n = len(arr)
+print(printFirstRepeating(arr, n))
 
 
 
