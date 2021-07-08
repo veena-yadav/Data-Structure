@@ -137,9 +137,23 @@ def MissingNum(A):
     # return x
         
 arr = [1, 2, 4, 6, 3, 7, 8]
-print(MissingNum(arr))
+# print(MissingNum(arr))
 
+################################################################3
+# Count pairs with given sum
 
+def Countpairs(arr,Sum_given):
+    n = len(arr)
+    cnt = 0
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i] + arr[j] == Sum_given:
+                cnt += 1
+                
+    return cnt
+
+arr = [1, 5, 7, -1, 5]
+print(Countpairs(arr,6))
 
 
 
