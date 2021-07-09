@@ -248,16 +248,32 @@ def NonRepeatingfirstNo(arr,n):
     return -1
 
 # Driver code
-arr = [ 9, 4, 9, 6, 7, 4 ]
-n = len(arr)
-print(NonRepeatingfirstNo(arr, n))
+# arr = [ 9, 4, 9, 6, 7, 4 ]
+# n = len(arr)
+# print(NonRepeatingfirstNo(arr, n))
+
+#################################################################3333333
+
+# Find the largest three distinct elements in an array
 
 
+# Driver program to test above function
+arr = [12, 45, 1, -1, 45,
+       54, 23, 5, 0, -10]
 
+arr1 = set(arr)
+arr = list(arr1)
+arr.sort(reverse= True)
 
+for i in range(3):
+    print(arr[i])
 
+############################################################################
 
+# Rearrange array in alternating positive & negative items
 
+def Rearrange(arr,n):
+    
 
 
 
