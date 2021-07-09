@@ -265,16 +265,37 @@ arr1 = set(arr)
 arr = list(arr1)
 arr.sort(reverse= True)
 
-for i in range(3):
-    print(arr[i])
+# for i in range(3):
+    # print(arr[i])
 
 ############################################################################
 
 # Rearrange array in alternating positive & negative items
 
 def Rearrange(arr,n):
-    
+    arr.sort()
+    i, j = 1, 1
+    while j < n:
+        if arr[j] > 0:
+            break
+        j += 1
+ 
+    while (arr[i] < 0) and (j < n):
+        
+        arr[i], arr[j] = arr[j], arr[i]  
+         
+        # increment i by 2
+        # because a negative number is followed by a positive number
+        i += 2     
+        j += 1
+     
+    return(arr)
 
+arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
+ 
+ans = Rearrange(arr, len(arr))
+for num in ans:
+    print(num, end = " ")
 
 
 
