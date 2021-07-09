@@ -228,11 +228,29 @@ def printFirstRepeating(arr,n):
           
     
 
-arr = [6, 10, 5, 4, 9, 120, 4, 6, 10]
+# arr = [6, 10, 5, 4, 9, 120, 4, 6, 10]
+# n = len(arr)
+# print(printFirstRepeating(arr, n))
+
+###############################################################33
+
+# Non-Repeating Element
+def NonRepeatingfirstNo(arr,n):
+    for i in range(n):
+        j =0
+        while(j<n):
+            if (i != j and arr[i] == arr[j]):
+                break
+            j += 1
+            
+        if j == n:
+            return arr[i]
+    return -1
+
+# Driver code
+arr = [ 9, 4, 9, 6, 7, 4 ]
 n = len(arr)
-print(printFirstRepeating(arr, n))
-
-
+print(NonRepeatingfirstNo(arr, n))
 
 
 
