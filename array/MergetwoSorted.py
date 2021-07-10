@@ -291,14 +291,54 @@ def Rearrange(arr,n):
      
     return(arr)
 
-arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
+# arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
  
-ans = Rearrange(arr, len(arr))
-for num in ans:
-    print(num, end = " ")
+# ans = Rearrange(arr, len(arr))
+# for num in ans:
+#     print(num, end = " ")
 
 
+###########################################################
 
+def maxSubarrayProduct(arr, n):
 
+    result = arr[0]
+ 
+    for i in range(n):
+     
+        mul = arr[i]
+        for j in range(i + 1, n):
+            result = max(result, mul)
+            mul *= arr[j]
+        result = max(result, mul)
+     
+    return result
+
+# arr = [ 1, -2, -3, 0, 7, -8, -2 ]
+# n = len(arr)
+# print("Maximum Sub array product is" , maxSubarrayProduct(arr, n))
+
+############################################################################
+
+#Longest Consecutive Subsequence
+
+def longestSequence(arr, n):
+    arr.sort()
+    x =[]
+    x.append(arr[0])
+    for i in range(1,n):
+        if arr[i] == arr[i-1] + 1:
+            x.append(arr[i])
+        
+        if arr[i] != arr[i-1] + 1:
+            break
+    
+    return x
+    
+    
+
+arr = [36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]
+n = len(arr)
+print(longestSequence(arr,n))
 
 
