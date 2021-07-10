@@ -334,11 +334,29 @@ def longestSequence(arr, n):
             break
     
     return x
-    
-    
 
-arr = [36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]
-n = len(arr)
-print(longestSequence(arr,n))
+# arr = [36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]
+# n = len(arr)
+# print(longestSequence(arr,n))
 
+#############################################################################3
 
+# minimum element in a sorted and rotated array contating duplicate elements.
+ 
+# Function to find minimum element
+def findMin(arr, low, high):
+   
+    while (low < high):
+        mid = low + (high - low) // 2
+         
+        if (arr[mid] == arr[high]):
+            high -= 1
+        elif (arr[mid] > arr[high]):
+            low = mid + 1
+        else:
+            high = mid
+    return arr[high]
+
+arr1 = [5, 6, 1, 2, 3, 4]
+n1 = len(arr1)
+print("The minimum element is ",findMin(arr1, 0, n1 - 1))
