@@ -349,9 +349,9 @@ def findMin(arr, low, high):
     while (low < high):
         mid = low + (high - low) // 2
          
-        if (arr[mid] == arr[high]):
+        if(arr[mid] == arr[high]):
             high -= 1
-        elif (arr[mid] > arr[high]):
+        elif(arr[mid] > arr[high]):
             low = mid + 1
         else:
             high = mid
@@ -360,3 +360,8 @@ def findMin(arr, low, high):
 arr1 = [5, 6, 1, 2, 3, 4]
 n1 = len(arr1)
 print("The minimum element is ",findMin(arr1, 0, n1 - 1))
+
+###################################################################################
+
+
+
