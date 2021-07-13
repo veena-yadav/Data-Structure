@@ -122,3 +122,41 @@ def Mergesort(arr):
 
 arr = [12, 11, 13, 5, 6, 7]
 print(Mergesort(arr))
+
+############################################################################
+"""
+x = 5
+Output: 2
+Explanation: Since, 5 is not a perfect 
+square, floor of square_root of 5 is 2.
+
+"""
+def floorSqrt(self, x): 
+    #Your code here
+        if x ==0 and x ==1:
+            return x
+        
+        i = 1
+        res = 0
+        
+        while res <= x:
+            i += 1
+            res = i*i
+        return i-1
+    
+#############################################################################
+"""N = 3
+arr[] = {1,2,3}
+Output: 1"""
+def peakElement(self,arr, n):
+
+        if n==1:
+            return 0
+        if arr[0] >= arr[1]:
+            return 0
+        if arr[n-1] >= arr[n-2]:
+            return n-1
+            
+        for i in range(1,n-1):
+            if (arr[i]>= arr[i-1] and arr[i]>= arr[i+1]):
+                return i
