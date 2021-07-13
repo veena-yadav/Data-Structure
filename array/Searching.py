@@ -81,7 +81,44 @@ def quick_sort(start, end, arr):
         quick_sort(start, p - 1, arr)
         quick_sort(p + 1, end, arr)
 
-arr = [ 10, 7, 8, 9, 1, 5 ]
-quick_sort(0, len(arr) - 1, arr)
-print(f'Sorted array: {arr}')
+# arr = [ 10, 7, 8, 9, 1, 5 ]
+# quick_sort(0, len(arr) - 1, arr)
+# print(f'Sorted array: {arr}')
     
+############################################################3333333333333
+
+def Mergesort(arr):
+    if len(arr) > 1:
+        mid = len(arr)//2
+        
+        l = arr[:mid]
+        r = arr[mid:]
+        
+        Mergesort(l)
+        Mergesort(r)
+        
+        i = j= k = 0
+        
+        while i<len(l) and j <len(r):
+            if l[i] < r[i]:
+                arr[k] = l[i]
+                i += 1
+            else:
+                arr[k] = r[j]
+                j += 1
+                
+            k += 1
+
+        while i <len(l):
+            arr[k] = l[i]
+            i += 1
+            k += 1
+        while j <len(r):
+            arr[k] = r[j]
+            j += 1
+            k += 1   
+        
+    return arr
+
+arr = [12, 11, 13, 5, 6, 7]
+print(Mergesort(arr))
