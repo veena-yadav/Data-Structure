@@ -54,3 +54,34 @@ def bubllesort(arr):
 
 # arr = [12, 11, 13, 5, 6]
 # print(bubllesort(arr))
+#################################################################
+#partition
+
+def partition(start,end,arr):
+    pivotIndex = start
+    pivot  = arr[pivotIndex]
+    
+    while start<end:
+        while start <len(arr) and arr[start] <= pivot:
+            start += 1
+        while arr[end] > pivot:
+            end -= 1
+        if start < end:
+            arr[start], arr[end] = arr[end], arr[start]
+    
+    arr[end], arr[pivotIndex] = arr[pivotIndex], arr[end]
+    return end
+
+def quick_sort(start, end, arr):
+     
+    if (start < end):
+    
+        p = partition(start, end, arr)
+
+        quick_sort(start, p - 1, arr)
+        quick_sort(p + 1, end, arr)
+
+arr = [ 10, 7, 8, 9, 1, 5 ]
+quick_sort(0, len(arr) - 1, arr)
+print(f'Sorted array: {arr}')
+    
