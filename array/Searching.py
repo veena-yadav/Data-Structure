@@ -209,4 +209,59 @@ def binarySearch(arr, low, high, k):
     if k > arr[mid]:
         return binarySearch(arr, (mid + 1), high,k)
     return binarySearch(arr, low, (mid -1), k)
- 
+
+#################################################################
+
+def minSwaps(arr, N):
+	
+	ans = 0
+	temp = arr.copy()
+	temp.sort()
+	for i in range(N):
+		if (arr[i] != temp[i]):
+			ans += 1
+
+			swap(arr, i,indexOf(arr, temp[i]))
+
+	return ans
+
+def swap(arr, i, j):
+	
+	temp = arr[i]
+	arr[i] = arr[j]
+	arr[j] = temp
+	
+def indexOf(arr, ele):
+	
+	for i in range(len(arr)):	
+		if (arr[i] == ele):
+				return i
+	return -1
+
+a = [101, 758, 315, 730,472, 619, 460, 479]
+n = len(a)
+	
+	# Output will be 5
+print(minSwaps(a, n))
+
+#########################################################
+def minimumPlatform(self,n,arr,dep):
+        # code here
+        arr.sort()
+        dep.sort()
+        i = 1
+        j=0
+        plat =1
+        res= 1
+        while i<n and j<n:
+            if arr[i]<=dep[j]:
+                plat +=1
+                i += 1
+            elif arr[i]>dep[j]:
+                plat -=1
+                j += 1
+        
+            if plat > res:
+                res = plat
+            
+        return res
