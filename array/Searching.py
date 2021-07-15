@@ -241,7 +241,7 @@ def indexOf(arr, ele):
 a = [101, 758, 315, 730,472, 619, 460, 479]
 n = len(a)
 	
-	# Output will be 5
+# Output will be 5
 print(minSwaps(a, n))
 
 #########################################################
