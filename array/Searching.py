@@ -121,8 +121,8 @@ def Mergesort(arr):
         
     return arr
 
-arr = [12, 11, 13, 5, 6, 7]
-print(Mergesort(arr))
+# arr = [12, 11, 13, 5, 6, 7]
+# print(Mergesort(arr))
 
 ############################################################################
 """
