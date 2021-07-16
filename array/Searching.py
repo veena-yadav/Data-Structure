@@ -285,3 +285,11 @@ Quick Sort	    Ω(n log(n))	θ(n log(n))	O(n^2)
 Merge Sort	    Ω(n log(n))	θ(n log(n))	O(n log(n))	 
 Bucket Sort	    Ω(n+k)	    θ(n+k)	    O(n^2)	 
 Radix Sort	    Ω(nk)	    θ(nk)	    O(nk)           """
+
+"""
+Radix sort time complexity = O(wn)
+for n keys of word size= w
+=>w = log(nk)
+O(wn)=O(klogn.n)
+=> kO(nlogn)
+"""
