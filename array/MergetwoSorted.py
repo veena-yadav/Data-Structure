@@ -357,11 +357,26 @@ def findMin(arr, low, high):
             high = mid
     return arr[high]
 
-arr1 = [5, 6, 1, 2, 3, 4]
-n1 = len(arr1)
-print("The minimum element is ",findMin(arr1, 0, n1 - 1))
+# arr1 = [5, 6, 1, 2, 3, 4]
+# n1 = len(arr1)
+# print("The minimum element is ",findMin(arr1, 0, n1 - 1))
 
 ###################################################################################
 
+# Minimize the maximum difference between the heights
 
+def findmaxDif(arr,n,k):
+    arr.sort()
+    ans = arr[n-1] - arr[0]
+    small = large = 0
+    
+    for i in range(1,n):
+        small = min(arr[0] + k, arr[i]-k)
+        large = max(arr[i-1]+k,arr[-1]-k)
+        ans = min(ans, large- small)
 
+    return ans
+
+# arr=[1, 5, 15, 10]
+# k=3
+# print(findmaxDif(arr,len(arr),k))
