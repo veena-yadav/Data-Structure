@@ -398,3 +398,31 @@ def findTriplet(arr,n,sum):
 # sum = 22
 # n = len(A)
 # print(findTriplet(A, n, sum))
+
+###################################################################33333
+def rowWithMax1s( mat):
+      
+    # Initialize max values
+    R = len(mat)
+    C = len(mat[0])
+    max_row_index = 0
+    index=C-1
+    # Traverse for each row and
+    # count number of 1s by finding
+    # the index of first 1
+    for i in range(0, R):
+      flag=False 
+      while(index >=0 and mat[i][index]==1):
+        flag=True 
+        index-=1
+        if(flag): 
+          max_row_index = i
+      if max_row_index==0 and mat[0][C-1]==0:
+        return 0
+    return max_row_index
+arr = [[0, 0, 0, 1],
+       [0, 0, 1, 1],
+       [0, 1, 1, 1],
+       [1, 1, 1, 1]]
+
+print(rowWithMax1s(arr))
