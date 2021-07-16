@@ -380,3 +380,21 @@ def findmaxDif(arr,n,k):
 # arr=[1, 5, 15, 10]
 # k=3
 # print(findmaxDif(arr,len(arr),k))
+##############################################################################################
+""" Find a triplet that sum to a given value
+Input: array = {12, 3, 4, 1, 6, 9}, sum = 24; 
+Output: 12, 3, 9 
+"""
+def findTriplet(arr,n,sum):
+    for i in range( 0, n-2):
+        for j in range(i + 1, n-1):
+            for k in range(j + 1, n):
+                if A[i] + A[j] + A[k] == sum:
+                    print("Triplet is", A[i],
+                          ", ", A[j], ", ", A[k])
+                    return True
+    
+# A = [1, 4, 45, 6, 10, 8]
+# sum = 22
+# n = len(A)
+# print(findTriplet(A, n, sum))
