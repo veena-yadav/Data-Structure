@@ -510,3 +510,35 @@ def subsetpresent(arr1,arr2,m,n):
 # else:
 #     print("arr2[] is not a subset of arr1[]")
 
+#########################################################################3
+def sortInWave(arr, n):
+     
+    #sort the array
+    arr.sort()
+    
+    # Swap adjacent elements
+    for i in range(0,n-1,2):
+        arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+ 
+# Driver program
+arr = [10, 90, 49, 2, 1, 5, 23]
+print(sortInWave(arr,len(arr)))
+
+#########################################################################
+def maxIndexDiff(arr, n):
+    maxDiff = -1
+    for i in range(0, n):
+        j = n - 1
+        while(j > i):
+            if arr[j] > arr[i] and maxDiff < (j - i):
+                maxDiff = j - i
+            j -= 1
+ 
+    return maxDiff
+ 
+ 
+# driver code
+arr = [9, 2, 3, 4, 5, 6, 7, 8, 18, 0]
+n = len(arr)
+print(maxIndexDiff(arr,n))
