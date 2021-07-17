@@ -522,8 +522,8 @@ def sortInWave(arr, n):
     return arr
  
 # Driver program
-arr = [10, 90, 49, 2, 1, 5, 23]
-print(sortInWave(arr,len(arr)))
+# arr = [10, 90, 49, 2, 1, 5, 23]
+# print(sortInWave(arr,len(arr)))
 
 #########################################################################
 def maxIndexDiff(arr, n):
@@ -539,6 +539,6 @@ def maxIndexDiff(arr, n):
  
  
 # driver code
-arr = [9, 2, 3, 4, 5, 6, 7, 8, 18, 0]
-n = len(arr)
-print(maxIndexDiff(arr,n))
+# arr = [9, 2, 3, 4, 5, 6, 7, 8, 18, 0]
+# n = len(arr)
+# print(maxIndexDiff(arr,n))
