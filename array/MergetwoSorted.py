@@ -477,12 +477,36 @@ def spiralPrint(m, n, a):
 
 
 
-a = [[1, 2, 3, 4, 5, 6],
-	[7, 8, 9, 10, 11, 12],
-	[13, 14, 15, 16, 17, 18]]
+# a = [[1, 2, 3, 4, 5, 6],
+# 	[7, 8, 9, 10, 11, 12],
+# 	[13, 14, 15, 16, 17, 18]]
 
-R = 3
-C = 6
+# R = 3
+# C = 6
 
-spiralPrint(R, C, a)
+# spiralPrint(R, C, a)
+
+############################################################
+#Find whether an array is subset of another array
+
+def subsetpresent(arr1,arr2,m,n):
+    for i in range(n):
+        for j in range(m):
+            if arr1[j] == arr2[i]:
+                break
+            
+    if j == m:
+        return 0
+    return 1
+
+# arr1 = [11, 1, 13, 21, 3, 7]
+# arr2 = [11, 3, 7, 1]
+ 
+# m = len(arr1)
+# n = len(arr2)
+ 
+# if(subsetpresent(arr1, arr2, m, n)):
+#     print("arr2[] is subset of arr1[] ")
+# else:
+#     print("arr2[] is not a subset of arr1[]")
 
