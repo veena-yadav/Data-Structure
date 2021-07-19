@@ -561,6 +561,6 @@ def NearToGiven(arr,n,x):
     return l[-1]          
                          
 
-arr = [1, 3, 4, 7, 10]
-n = len(arr)
-print(NearToGiven(arr,n,15))
+# arr = [1, 3, 4, 7, 10]
+# n = len(arr)
+# print(NearToGiven(arr,n,15))
