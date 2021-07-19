@@ -542,3 +542,25 @@ def maxIndexDiff(arr, n):
 # arr = [9, 2, 3, 4, 5, 6, 7, 8, 18, 0]
 # n = len(arr)
 # print(maxIndexDiff(arr,n))
+
+#############################################################################
+#Given a sorted array and a number x, find the pair in array whose sum is closest to x
+'''Input: arr[] = {10, 22, 28, 29, 30, 40}, x = 54
+Output: 22 and 30 = 52
+'''
+
+def NearToGiven(arr,n,x):
+    l = []
+    for i in range(0,n-1):
+        for j in range(i+1,n):
+            sum = arr[i]+arr[j]
+            if sum<x:
+                l.append(sum)
+                
+    l.sort()
+    return l[-1]          
+                         
+
+arr = [1, 3, 4, 7, 10]
+n = len(arr)
+print(NearToGiven(arr,n,15))
