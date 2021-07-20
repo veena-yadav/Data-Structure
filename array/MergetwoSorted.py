@@ -585,8 +585,8 @@ def findMinDiff(arr, n, m):
 		
 	return min_diff
 
-arr = [12, 4, 7, 9, 2, 23, 25, 41,30, 40, 28, 42, 30, 44, 48,43, 50]
-m = 7
-n = len(arr)
-print("Minimum difference is", findMinDiff(arr, n, m))
+# arr = [12, 4, 7, 9, 2, 23, 25, 41,30, 40, 28, 42, 30, 44, 48,43, 50]
+# m = 7
+# n = len(arr)
+# print("Minimum difference is", findMinDiff(arr, n, m))
 	
