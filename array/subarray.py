@@ -15,7 +15,7 @@ def substring(str):
             print(str[i:j+1], end = ' ')
             
 str = 'python'
-# substring(str)
+substring(str)
 
 # sub= sequence 2^n
 def subsequence(str, substr= ''):
@@ -54,5 +54,5 @@ def printPowerSet(set,set_size):
 		print(""); 
 
 # Driver program to test printPowerSet 
-set = ['a', 'b', 'c']; 
-printPowerSet(set, 3); 
+# set = ['a', 'b', 'c']; 
+# printPowerSet(set, 3); 
