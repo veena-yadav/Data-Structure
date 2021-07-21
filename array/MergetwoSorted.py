@@ -634,8 +634,8 @@ def coinsum(s,m,n):
             
     return table[n]
 
-arr = [1, 2, 3]
-m = len(arr)
-n = 4
-x = coinsum(arr, m, n)
-print (x)
+# arr = [1, 2, 3]
+# m = len(arr)
+# n = 4
+# x = coinsum(arr, m, n)
+# print (x)
