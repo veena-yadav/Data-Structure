@@ -616,10 +616,26 @@ def combinationUtil(arr, n, r, index, data, i):
 
 	combinationUtil(arr, n, r, index, data, i + 1)
 
-arr = [1, 2, 3, 4, 5]
-r = 3
-n = len(arr)
-printCombination(arr, n, r)
+# arr = [1, 2, 3, 4, 5]
+# r = 3
+# n = len(arr)
+# printCombination(arr, n, r)
 
+##################################################################################
+#Coin Change
 
+def coinsum(s,m,n):
+    table = [0 for k in range(n+1)]
+    table[0] = 1
+    
+    for i in range(0,m):
+        for j in range(s[i],n+1):
+            table[j] += table[j-s[i]]
+            
+    return table[n]
 
+arr = [1, 2, 3]
+m = len(arr)
+n = 4
+x = coinsum(arr, m, n)
+print (x)
