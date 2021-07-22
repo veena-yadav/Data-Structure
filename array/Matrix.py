@@ -21,3 +21,27 @@ def searchingInMatrix(arr,r,c,key):
 
 # arr=[ [1,2,3],[4,5,6],[7,8,9]]
 # print(searchingInMatrix(arr,3,3,13))
+
+##########################################################
+# Addition of two matrix
+N = 4
+def add(A,B,C):
+ 
+    for i in range(N):
+        for j in range(N):
+            C[i][j] = A[i][j] + B[i][j]
+            
+A = [ [1, 1, 1, 1],
+    [2, 2, 2, 2],
+    [3, 3, 3, 3],
+    [4, 4, 4, 4]]
+  
+B= [ [1, 1, 1, 1],
+    [2, 2, 2, 2],
+    [3, 3, 3, 3],
+    [4, 4, 4, 4]]
+  
+C=A[:][:] # To store result
+ 
+# add(A, B, C)
+# traversematrix(C,4,4)
