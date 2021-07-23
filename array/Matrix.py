@@ -140,13 +140,11 @@ mat = [ [1, 2 ],
 		
 '''
 
-rotateMatrix(mat)
-
-# Print rotated matrix
-displayMatrix(mat)
+# rotateMatrix(mat)
+# displayMatrix(mat)
 
 
-# This code is contributed by saloni1297
+
 	
 
 
