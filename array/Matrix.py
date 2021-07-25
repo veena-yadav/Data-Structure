@@ -153,10 +153,6 @@ a = [ [1, 4, 7, 1],
 
  ####################################################################
  #spiral of matrix
- 
-# Python3 program to print
-# given matrix in spiral form
-
 
 def spiralPrint(m, n, arr):
 	k = 0
