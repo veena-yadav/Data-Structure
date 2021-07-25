@@ -78,19 +78,15 @@ def multiplyMatrix(m1, m2, mat1,n1, n2, mat2):
 # Python3 program to rotate a matrix by 90 degrees
 N = 4
 
-# An Inplace function to rotate
-# N x N matrix by 90 degrees in
-# anti-clockwise direction
+# An Inplace function to rotate N x N matrix by 90 degrees in anti-clockwise direction
 def rotateMatrix(mat):
-	
-	# Consider all squares one by one
+
 	for x in range(0, int(N / 2)):
 		
-		# Consider elements in group
-		# of 4 in current square
+		# Consider elements in group of 4 in current square
 		for y in range(x, N-x-1):
 			
-			# store current cell in temp variable
+
 			temp = mat[x][y]
 
 			# move values from right to top
@@ -143,10 +139,22 @@ mat = [ [1, 2 ],
 # rotateMatrix(mat)
 # displayMatrix(mat)
 
+###################################################################
+m=3
+n=4
+def transpose(a,b):
+    for i in range(n):
+        for j in range(m):
+            b[i][j]= a[j][i]
+    return b
 
+b =[[ 0 for i in range(m)] for j in range(n)]
+a = [ [1, 4, 7, 1],
+    [2, 5, 8, 2],
+    [3, 6, 9, 3]]
 
-	
-
+# x=transpose(a,b)
+# traversematrix(x,n,m)
 
     
     
