@@ -106,14 +106,9 @@ def rotateMatrix(mat):
 def displayMatrix( mat ):
 	
 	for i in range(0, N):
-		
 		for j in range(0, N):
-			
 			print (mat[i][j], end = ' ')
 		print ("")
-	
-	
-
 
 # Driver Code
 mat = [[0 for x in range(N)] for y in range(N)]
