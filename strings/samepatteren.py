@@ -145,3 +145,23 @@ def missingPanagram(self, Str):
     if len(res) != 0:
         return res
     return -1
+
+"""
+Input:
+s = Abcdefghijklmnopqrstuvwxy
+Output: z"""
+
+###################################################
+
+#Function to locate the occurrence of the string x in the string s.
+def strstr(s,x):
+
+    if x in s:
+        return s.find(x)
+    return -1
+
+# s = GeeksForGeeks, x = Fr
+# Output: -1
+
+# s = GeeksForGeeks, x = For
+# Output: 5
