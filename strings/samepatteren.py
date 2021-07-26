@@ -165,3 +165,25 @@ def strstr(s,x):
 
 # s = GeeksForGeeks, x = For
 # Output: 5
+#####################################################33
+
+def areRotations(s1,s2):
+    temp = '' 
+      
+    if len(s1) != len(s2): 
+        return False
+   
+    temp = s1 + s1 
+        
+    if s2 in temp: 
+        return True #returning true if 2nd string is present in concatenated string
+    else: 
+        return False
+    
+string1 = "geeksforgeeks"
+string2 = "forgeeksgeeks"
+  
+# if areRotations(string1, string2): 
+#     print("Given Strings are rotations of each other.")
+# else: 
+#     print("Given Strings are not rotations of each other.")
