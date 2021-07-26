@@ -124,3 +124,24 @@ def getMaxOccurringChar(str):
 # Driver program to test the above function
 str = "output"
 # print ("Max occurring character is " + getMaxOccurringChar(str))
+
+##################################################################
+def missingPanagram(self, Str):
+    MAX_CHAR = 26
+    present = [False for i in range(MAX_CHAR)]
+ 
+    for i in range(len(Str)):
+        if (Str[i] >= 'a' and Str[i] <= 'z'):
+            present[ord(Str[i]) - ord('a')] = True
+        elif (Str[i] >= 'A' and Str[i] <= 'Z'):
+            present[ord(Str[i]) - ord('A')] = True
+     
+    res = ""
+     
+    for i in range(MAX_CHAR):
+        if (present[i] == False):
+            res += chr(i + ord('a'))
+                 
+    if len(res) != 0:
+        return res
+    return -1
