@@ -187,3 +187,22 @@ string2 = "forgeeksgeeks"
 #     print("Given Strings are rotations of each other.")
 # else: 
 #     print("Given Strings are not rotations of each other.")
+
+####################################################
+def isAnagram(a,b):
+    n1 = len(a)
+    n2 = len(b)
+    if n1 != n2:
+        return("NO")
+    s1 = sorted(a)
+    s2 = sorted(b)
+        
+    for i in range(0,n1):
+        if s1[i] != s2[i]:
+            return("NO")
+    return("Yes")
+
+str1 = "geeksforgeeks"
+str2 = "forgeeksgeeks"
+ 
+# print(isAnagram(str1,str2))
