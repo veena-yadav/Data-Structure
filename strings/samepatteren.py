@@ -206,3 +206,20 @@ str1 = "geeksforgeeks"
 str2 = "forgeeksgeeks"
  
 # print(isAnagram(str1,str2))
+def isValid(s):
+
+    l= s.split(".")
+    for x in l:
+        if len(x) == 0 or len(x) > 3:
+            return 0
+          
+        if x[0] == '0' and len(x) != 1 or not x.isdigit() or int(x) > 255:
+            return 0
+    return 1
+    # for i in range(len(l)):
+    #     if i <=0 and i>=255:
+    #         return 0
+    # return 1
+
+s = "125.220.100.1"
+# print(isValid(s))
