@@ -223,3 +223,19 @@ def isValid(s):
 
 s = "125.220.100.1"
 # print(isValid(s))
+###################################################
+"""Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+Explanation: After reversing the whole
+string(not individual words), the input
+string becomes
+much.very.program.this.like.i"""
+#Function to reverse words in a given string.
+def reverseWords(S):
+        # code here 
+    l = []
+    s1 = s.split(".")
+    for word in s1:
+        l.insert(0, word)
+    return(".".join(l))
