@@ -132,7 +132,7 @@ Explanation: Since, 5 is not a perfect
 square, floor of square_root of 5 is 2.
 
 """
-def floorSqrt(self, x): 
+def floorSqrt( x): 
     #Your code here
         if x ==0 and x ==1:
             return x

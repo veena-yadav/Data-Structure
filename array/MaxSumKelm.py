@@ -13,7 +13,7 @@ def maxSum(arr,k):
     max_sum = windowSum
     for i in range(n-k):
         windowSum = windowSum + arr[i+k] - arr[i]
-        print(windowSum)
+        # print(windowSum)
         max_sum = max(windowSum, max_sum)
     return max_sum
     

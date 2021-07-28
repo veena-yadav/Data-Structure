@@ -85,8 +85,7 @@ def rotateMatrix(mat):
 		
 		# Consider elements in group of 4 in current square
 		for y in range(x, N-x-1):
-			
-
+		
 			temp = mat[x][y]
 
 			# move values from right to top

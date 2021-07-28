@@ -211,7 +211,8 @@ def findCommon(ar1,ar2,ar3,n1,n2,n3):
 
 
 ####################################################################
-"""Given an array of integers, find the first repeating element in it. We need to find the element that occurs more than once and whose index of first occurrence is smallest. """
+"""Given an array of integers, find the first repeating element in it. We need to find the element that occurs more than once and whose 
+index of first occurrence is smallest. """
 
 def printFirstRepeating(arr,n):
     # for i in range(n):

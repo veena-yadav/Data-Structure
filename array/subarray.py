@@ -15,7 +15,7 @@ def substring(str):
             print(str[i:j+1], end = ' ')
             
 str = 'python'
-substring(str)
+# substring(str)
 
 # sub= sequence 2^n
 def subsequence(str, substr= ''):
@@ -27,7 +27,7 @@ def subsequence(str, substr= ''):
     return
     
     
-str = "abc"
+# str = "abc"
 # subsequence(str)
 
 # python3 program for power set 
