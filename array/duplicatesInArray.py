@@ -1,14 +1,14 @@
 def Duplicates(arr):
     arr.sort()
-    for i in range(0,len(arr)):
+    for i in range(1,len(arr)):
         if arr[i] == arr[i-1]:
             return arr[i]
         
         
 arr = [1,2,3,4,5,5]
-print(Duplicates(arr))
+# print(Duplicates(arr))
 
-
+#####################################
 
 # Search a elment in arrary
 arr1 = [12, 34, 10, 6, 40]
@@ -19,7 +19,9 @@ def SearchArr(arr,n,x):
             return i
     return("element does not exit")
     
-print(SearchArr(arr1,n,34))
+# print(SearchArr(arr1,n,34))
+
+############################################
 
 # count frequency of element in a sorted arrray
 arr1 = [12, 34, 10,12,12, 6, 40]
@@ -33,4 +35,4 @@ def countfreq(arr,n,x):
     return count
     # return("element does not exit")
     
-print(countfreq(arr1,n,12))
+# print(countfreq(arr1,n,12))
