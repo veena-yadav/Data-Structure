@@ -108,8 +108,16 @@ def countsetbitutil(x):
         return 0
     return (0 if int(x%2)==0 else 1) + countsetbitutil(int(x/2))
 
-print(countsetbit(17))
+# print(countsetbit(17))
+###########################################################
+#Function to check if the number is sparse or not.
+def isSparse(n):
+        
+    if n & (n>>1):
+        return 0
+    return 1
 
+print(isSparse(32))
 
 
 
