@@ -24,16 +24,47 @@ to decimal number 8.
 Input : N = 18
 Output : 16"""
 def setBitNumber(n):
-    if (n == 0):
-        return 0
+    # if (n == 0):
+    #     return 0
  
-    msb = 0
-    n = int(n / 2)
+    # msb = 0
+    # n = int(n / 2)
  
-    while (n > 0):
-        n = int(n / 2)
-        msb += 1
+    # while (n > 0):
+    #     n = int(n / 2)
+    #     msb += 1
  
-    return (1 << msb)
+    # return (1 << msb)
+    
+    # 2nd method
+    n |= n>>1
+    n |= n>>2
+    n |= n>>4
+    n |= n>>8
+    n |= n>>16
+    
+    n += 1
+    return (n>>1) 
 
-print(setBitNumber(18))
+# print(setBitNumber(18))
+
+############################################
+# find XOR of numbers from 1 to n.
+ 
+def computeXOR(n) :
+
+    # if n is multiple of 4
+    if n % 4 == 0 :
+        return n
+ 
+    # If n % 4 gives remainder 1
+    if n % 4 == 1 :
+        return 1
+ 
+    # If n%4 gives remainder 2
+    if n % 4 == 2 :
+        return n + 1
+ 
+    # If n%4 gives remainder 3
+    return 0
+# print(computeXOR(5))
