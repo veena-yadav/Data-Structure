@@ -111,13 +111,67 @@ def countsetbitutil(x):
 # print(countsetbit(17))
 ###########################################################
 #Function to check if the number is sparse or not.
+""" A number is said to be a sparse number if no two or more consecutive bits are set in the binary representation."""
 def isSparse(n):
         
     if n & (n>>1):
         return 0
     return 1
 
-print(isSparse(32))
+# print(isSparse(32))
+###########################################################
+def greyConverter(self,n):
+        return n ^ (n >> 1)
+
+
+# 2nd metho
+# and Gray to Binary conversion
+
+# function to xor two characters
+def xor_c(a, b):
+	return '0' if(a == b) else '1'
+
+# function to flip the bit
+def flip(c):
+	return '1' if(c == '0') else '0'
+
+# function to convert binary string
+# to gray string
+def binarytoGray(binary):
+	gray = ""
+
+	gray += binary[0]
+	for i in range(1, len(binary)):
+
+		gray += xor_c(binary[i - 1],binary[i])
+
+	return gray
+
+# function to convert gray code
+# string to binary string
+def graytoBinary(gray):
+
+	binary = ""
+	binary += gray[0]
+
+	for i in range(1, len(gray)):
+		
+		if (gray[i] == '0'):
+			binary += binary[i - 1]
+
+		else:
+			binary += flip(binary[i - 1])
+
+	return binary
+
+# Driver Code
+binary = "01001"
+print("Gray code of", binary, "is",
+			binarytoGray(binary))
+
+gray = "01101"
+print("Binary code of", gray, "is",graytoBinary(gray))
+	
 
 
 
