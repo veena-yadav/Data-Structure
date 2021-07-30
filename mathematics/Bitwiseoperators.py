@@ -120,10 +120,17 @@ def isSparse(n):
 
 # print(isSparse(32))
 ###########################################################
-def greyConverter(self,n):
+def greyConverter(n):
         return n ^ (n >> 1)
-
-
+    
+def grayToBinary(n):
+    res = n
+    
+    while n > 0:
+        n >>= 1
+        res ^= n
+        
+    return res
 # 2nd metho
 # and Gray to Binary conversion
 
@@ -165,14 +172,25 @@ def graytoBinary(gray):
 	return binary
 
 # Driver Code
-binary = "01001"
-print("Gray code of", binary, "is",
-			binarytoGray(binary))
+# binary = "01001"
+# print("Gray code of", binary, "is",
+# 			binarytoGray(binary))
 
-gray = "01101"
-print("Binary code of", gray, "is",graytoBinary(gray))
-	
+# gray = "01101"
+# print("Binary code of", gray, "is",graytoBinary(gray))
+##################################################################
+def countBitsFlip(a,b):
+    return countbit(a^b)
 
+def countbit(n):
+        count = 0
+        
+        while n:
+            count += 1
+            n &= n-1
+        return count
+
+# print(countBitsFlip(10,20))
 
 
 
