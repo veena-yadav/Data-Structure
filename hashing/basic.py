@@ -153,3 +153,59 @@ def topK(nums, k):
 	return l
 # a=[5,5,4,6,4]
 # print(topK(a,2))
+############################################################
+# def topK(nums, k):
+	
+# 	mp = {}
+# 	l =[]
+# 	for i in range(len(nums)):
+# 		if nums[i] not in mp:
+# 		    mp[nums[i]]=0
+# 		mp[nums[i]] +=1
+# 	a = [0] * (len(mp))
+# 	j = 0
+# 	for i in mp:
+#     	a[j] = [i, mp[i]]
+#     	j += 1
+#     	a = sorted(a, key=lambda x: x[0],
+#                    reverse=True)
+#     	a = sorted(a, key=lambda x: x[1],
+#                    reverse=True)
+# 	for i in range(k):
+#         l.append(a[i][0])
+#         return l
+
+#############################################################
+def insert(dict, key, value):
+    dict.setdefault(key, []).append(value)
+ 
+def printallSublists(A):
+
+    dict = {}
+    insert(dict, 0, -1)
+ 
+    sum = 0
+    count =0
+    for i in range(len(A)):
+ 
+        sum += A[i]
+
+        if sum in dict:
+
+            list = dict.get(sum)
+ 
+            # find all sublists with the same sum
+            for value in list:
+                print("Sublist is position", (value + 1, i))
+                count +=1
+        # insert (sum so far, current index) pair into the dictionary
+        insert(dict, sum, i)
+    print("total subarray who has sum 0 are: ",count)
+    
+ 
+ 
+# if __name__ == '__main__':
+ 
+#     A = [3, 4, -7, 3, 1, 3, 1, -4, -2, -2]
+ 
+#     printallSublists(A)
