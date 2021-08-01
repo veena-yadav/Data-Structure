@@ -90,7 +90,7 @@ def firstNonRepeating(arr, n):
 		if arr[i] not in mp:
 			mp[arr[i]]=0
 		mp[arr[i]]+=1
-		
+		# print(mp)
 	# Traverse through map only and
 	for x in mp:
 		if (mp[x]== 1):
@@ -117,3 +117,39 @@ def maxDistance( arr, n):
     
 # arr = [3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2]
 # print( maxDistance(arr, len(arr)))
+
+#######################################################
+#Given an array of integers, sort the array according to frequency of elements. That is elements that have higher frequency 
+# come first. If frequencies of two elements are same, then smaller number comes first.
+def sortByFreq(a,n):
+    from collections import defaultdict
+        
+    d = defaultdict(lambda: 0)
+    for i in range(n):
+        d[a[i]] += 1
+        print(d)
+     
+    a.sort(key=lambda x: (-d[x], x))
+    return (a)
+
+# a=[5,5,4,6,4]
+# print(sortByFreq(a,len(a)))
+
+###############################################################
+def topK(nums, k):
+		
+	mp = {}
+	l =[]
+	for i in range(len(nums)):
+		if nums[i] not in mp:
+		    mp[nums[i]]=0
+		mp[nums[i]] +=1
+		    
+	for x in mp:
+	    if mp[x]==k:
+	        l.append(x)
+	            
+	l.sort()
+	return l
+# a=[5,5,4,6,4]
+# print(topK(a,2))
