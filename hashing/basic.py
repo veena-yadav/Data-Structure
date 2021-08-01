@@ -54,7 +54,7 @@ insert(HashTable, 9, 'Delhi')
 insert(HashTable, 21, 'Punjab')
 insert(HashTable, 21, 'Noida')
 
-display_hash (HashTable)
+# display_hash (HashTable)
 
 
 ###################################################
@@ -77,3 +77,43 @@ def generatekey(value):
 def insertinHash(hashtable,value,data):
     hashKey = generatekey(value)
     HashTable[hashKey].append(data)
+    
+    
+###############################################
+# Efficient Python program to print all non-
+# repeating elements.
+
+def firstNonRepeating(arr, n):
+
+	mp={}
+	for i in range(n):
+		if arr[i] not in mp:
+			mp[arr[i]]=0
+		mp[arr[i]]+=1
+		
+	# Traverse through map only and
+	for x in mp:
+		if (mp[x]== 1):
+			print(x,end=" ")
+			
+
+# arr = [ 9, 4, 9, 6, 7, 4 ]
+# n = len(arr)
+# firstNonRepeating(arr, n)
+
+##################################################################
+def maxDistance( arr, n):
+        mp = {}
+        maxDict = 0
+        
+        for i in range(n):
+    
+            if arr[i] not in mp.keys():
+                mp[arr[i]] = i
+            else:
+                maxDict = max(maxDict, i-mp[arr[i]])
+     
+        return maxDict
+    
+# arr = [3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2]
+# print( maxDistance(arr, len(arr)))
