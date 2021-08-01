@@ -21,11 +21,11 @@ def prefixSum(arr,j,k):
     print(ans)
     return
     
-pr = [1, 2, 3, 4, 5]
-ar = pr[:]
-prefixSum(ar, 1, 3)
-ar = pr[:]
-prefixSum(ar, 2, 4)
+# pr = [1, 2, 3, 4, 5]
+# ar = pr[:]
+# prefixSum(ar, 1, 3)
+# ar = pr[:]
+# prefixSum(ar, 2, 4)
 # arr = list(input().split(" "))
 # n = int(input())
 
@@ -34,3 +34,11 @@ prefixSum(ar, 2, 4)
     
     
 # print(prefixSum( arr,y,x))
+def maxDistance(arr, n):
+    x = arr[n-1]
+    for i in range(n):
+        if arr[i] == x:
+            return int(n-i-1)
+        
+a = [3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2]
+print(maxDistance(a,len(a)))

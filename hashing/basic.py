@@ -55,3 +55,25 @@ insert(HashTable, 21, 'Punjab')
 insert(HashTable, 21, 'Noida')
 
 display_hash (HashTable)
+
+
+###################################################
+# via linear probing
+
+def printHash(hashtable):
+    for i in range(len(hashtable)):
+        print(i, end=" ")
+        for j in hashtable[i]:
+            print("--->", end=" ")
+            print(j, end=" ")
+            
+        print()
+        
+HashTable = [[] for _ in range(10)]
+
+def generatekey(value):
+    return value % len(HashTable)
+
+def insertinHash(hashtable,value,data):
+    hashKey = generatekey(value)
+    HashTable[hashKey].append(data)
