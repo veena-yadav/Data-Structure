@@ -19,13 +19,7 @@ def pop(stack):
         print('poped element: ', item)
 
 
-# newstack = create_stack()
-# push(newstack, str(6))
-# push(newstack, str(9))
-# push(newstack, str(10))
-# print(newstack)
-# pop(newstack)
-# print(newstack)
+# 
 
 
 # --------------------------------------------------------------------------------------------------------------------------------------
@@ -50,6 +44,7 @@ class Queue:
 # Q.enqueue(5)
 # Q.enqueue(10)
 # Q.enqueue(15)
+
 # Q.display()
 # Q.dequeue()
 # Q.display()
@@ -126,6 +121,7 @@ class LL:
 
 # linkedlist = LL()
 # linkedlist.pushBeg(5)
+ 
 # linkedlist.pushBeg(10)
 # # linkedlist.pushAfter(1,15)
 # linkedlist.pushLast(20)
