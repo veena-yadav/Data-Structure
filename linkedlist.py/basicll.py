@@ -83,8 +83,71 @@ class LinkedList:
             
     #     return temp  
     
+# spliting a circular linked list
+def splitList( head, head1, head2):
+        #code here
+        fast = head
+        slow = head
+        while fast.next != head and fast.next.next != head :
+            fast = fast.next.next
+            slow = slow.next
+            
+            if fast.next.next == head:
+                fast = fast.next
+            head1.head = head
+     
+            if head.next != head:
+                head2.head = slow.next
+     
+            fast.next = slow.next
+         
+            slow.next = head
+        
+        
+        #this is to emulate pass by reference in python please don't delete below line.
+        return head1,head2
 
-
+# delete middle node of a linked list.
+def countOfNodes(head):
+        count =0
+        cur = head
+        while cur:
+            cur = cur.next
+            count += 1
+        return count
+def deleteMid(head):
+    
+    copyhead = head
+    if head ==None:
+        return None
+    if head.next == None:
+        del(head)
+        return None
+        
+    totalnode = countOfNodes(head)
+    mid = totalnode // 2
+  
+    # Delete the middle node
+    while (mid > 1):
+        mid -= 1
+        head = head.next
+  
+    # Delete the middle node
+    head.next = head.next.next
+  
+    return copyhead
+    
+   ####################################################################### 
+#Function to delete a node without any reference to head pointer.
+    def deleteNode(self,curr_node):
+        #code here
+        node = curr_node
+        prev=None
+        while node.next:
+            node.data=node.next.data
+            prev=node
+            node=node.next
+        prev.next=None
 
 llist = LinkedList()
 llist.push(20)
