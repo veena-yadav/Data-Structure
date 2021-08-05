@@ -148,6 +148,48 @@ def deleteMid(head):
             prev=node
             node=node.next
         prev.next=None
+########################################################################
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+
+class Solution:
+    def copyRandomList(self, head: 'Node') -> 'Node':
+        if not head:
+            return 
+    
+        curr = head
+
+        #creating a copy of each node in the original linkedlist using next pointer
+        while curr:
+
+            new = curr.next
+            curr.next = Node(curr.val)
+            curr.next.next = new
+            curr  = new
+
+
+            curr_rd = head
+
+       #adding the random pointer to the newly created nodes
+        while curr_rd:
+            if curr_rd.random:
+                curr_rd.next.random = curr_rd.random.next
+            curr_rd = curr_rd.next.next
+
+
+        second = cur = head.next
+
+        #separating the copy and original linked list
+        while cur.next:
+            cur.next = cur.next.next        
+            cur = cur.next
+        head.next = None
+
+        #return the head of cloned linkedlist
+        return second
 
 llist = LinkedList()
 llist.push(20)
