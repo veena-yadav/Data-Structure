@@ -13,3 +13,19 @@ def reverseString(s):
     
 # s = ["h","e","l","l","o"]
 # print(reverseString(s))
+
+#33333333333333333333333333333333333333333333333333333333333333333333
+def reverse(x):
+    if x==0:
+        return 0
+    str_n = str(abs(x))[::-1]
+    if int(str_n)<2**31:
+        if x >0 :
+            return int(str_n)
+        return -int(str_n)
+    return 0
+
+# x = -123
+# print(reverse(x))
+
+#################################################################
