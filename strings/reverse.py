@@ -29,3 +29,29 @@ def reverse(x):
 # print(reverse(x))
 
 #################################################################
+from collections import Counter
+def firstUniqChar(s):
+	# Dictionary to maintain count
+    count = {}
+	# Iterate through each character and update the count
+    for c in s:
+        keys = count.keys()
+        if(c in keys):
+            count[c]+=1
+        else:
+            count[c]=1
+	# Return the index, if count is 1
+    for i in range(len(s)):
+        if(count[s[i]]==1):
+            return i
+    return -1
+    
+    # count = collections.Counter(s)
+        
+    #     # find the index
+    # for idx, ch in enumerate(s):
+    #     if count[ch] == 1:
+    #         return idx     
+    # return -1
+s = "loveleetcode"
+print(firstUniqChar(s))
