@@ -53,5 +53,34 @@ def firstUniqChar(s):
     #     if count[ch] == 1:
     #         return idx     
     # return -1
-s = "loveleetcode"
-print(firstUniqChar(s))
+# s = "loveleetcode"
+# print(firstUniqChar(s))
+
+"""b = Counter({'geeks' : 4, 'for' : 1,'gfg' : 2, 'python' : 3})
+ 
+for i in b.elements():
+    print(i, b[i])"""
+
+
+#############################################################33
+def isAnagram(s,t):
+    s="".join(sorted(s))
+    t="".join(sorted(t))
+    if s==t:
+        return True
+    else:
+        return False
+#         sfreq=collections.Counter(s)
+#         tfreq=collections.Counter(t)
+#         s_size=len(sfreq)
+#         t_size=len(tfreq)
+        
+#         for letter in sfreq:
+#             if tfreq[letter] != sfreq[letter]:
+#                 return False
+            
+#             t_size-=1
+#             s_size-=1
+#         return t_size == s_size == 0
+
+##############################################################
