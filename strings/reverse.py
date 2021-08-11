@@ -117,8 +117,8 @@ def strStr(self, haystack: str, needle: str) -> int:
     
 ######################################################################
 """Input: strs = ["flower","flow","flight"]
-Output: "fl""""
-def longestCommonPrefix(strs: List[str]) -> str:
+Output: "fl"""
+def longestCommonPrefix(strs):
     prefix=""
     if len(strs)==0: return prefix
 
